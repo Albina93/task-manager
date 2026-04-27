@@ -6,10 +6,18 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   onStatusChange,
   onDelete,
 }) => {
+  // Color logic for priority
+  const priorityColor =
+    task.priority === "high"
+      ? "red"
+      : task.priority === "medium"
+        ? "orange"
+        : "green";
   return (
     <div>
       <h3>{task.title}</h3>
       <p>{task.description}</p>
+      <span style={{ color: priorityColor }}>Priority: {task.priority}</span>
       <p>Due: {task.dueDate}</p>
       <p>Status: {task.status}</p>
       {/* Status dropdown... */}
