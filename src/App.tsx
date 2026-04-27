@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TaskItem } from "./components/TaskItem/TaskItem";
-
+import { Taskfilter } from "./components/TaskFilter/TaskFilter";
 import "./App.css";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   };
   return (
     <div>
+      <Taskfilter onFilterChange={(filters) => console.log(filters)} />
       <TaskItem
         task={taskTest}
         onStatusChange={(id, status) => console.log(id, status)}

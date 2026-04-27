@@ -14,7 +14,15 @@ export const TaskItem: React.FC<TaskItemProps> = ({
         ? "orange"
         : "green";
   return (
-    <div>
+    <div
+      style={{
+        border: "1px solid grey",
+        padding: "10px",
+        marginBottom: "10px",
+        backgroundColor: "black",
+        color: "white",
+      }}
+    >
       <h3>{task.title}</h3>
       <p>{task.description}</p>
       <span style={{ color: priorityColor }}>Priority: {task.priority}</span>
@@ -31,7 +39,9 @@ export const TaskItem: React.FC<TaskItemProps> = ({
       </select>
 
       {/* Delete button... */}
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      <button style={{ color: "red" }} onClick={() => onDelete(task.id)}>
+        Delete
+      </button>
     </div>
   );
 };
