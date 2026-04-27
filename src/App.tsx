@@ -1,12 +1,25 @@
 import { useState } from "react";
+import { TaskItem } from "./components/TaskItem/TaskItem";
 
 import "./App.css";
 
 function App() {
+  const taskTest = {
+    id: "1",
+    title: "Test Task",
+    description: "Hello, it is just a test",
+    status: "pending",
+    priority: "high",
+    dueDate: "2026-01-01",
+  };
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <div>
+      <TaskItem
+        task={taskTest}
+        onStatusChange={(id, status) => console.log(id, status)}
+        onDelete={(id) => console.log("delete", id)}
+      />
+    </div>
   );
 }
 

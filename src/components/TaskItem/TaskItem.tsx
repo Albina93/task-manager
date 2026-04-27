@@ -14,6 +14,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({
       <p>Status: {task.status}</p>
       {/* Status dropdown... */}
       <select
+        value={task.status}
         onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}
       >
         <option value="pending">Pending</option>
