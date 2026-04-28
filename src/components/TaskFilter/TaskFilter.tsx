@@ -1,5 +1,5 @@
 import React from "react";
-import type { TaskFilterProps } from "../../types";
+import type { TaskFilterProps, TaskStatus } from "../../types";
 
 export const Taskfilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
   return (
@@ -11,7 +11,9 @@ export const Taskfilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
           onChange={(e) =>
             onFilterChange({
               status:
-                e.target.value === "all" ? undefined : (e.target.value as any),
+                e.target.value === "all"
+                  ? undefined
+                  : (e.target.value as TaskStatus),
             })
           }
         >
@@ -29,7 +31,9 @@ export const Taskfilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
           onChange={(e) =>
             onFilterChange({
               priority:
-                e.target.value === "all" ? undefined : (e.target.value as any),
+                e.target.value === "all"
+                  ? undefined
+                  : (e.target.value as "low" | "medium" | "high"),
             })
           }
         >

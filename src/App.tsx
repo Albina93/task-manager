@@ -1,4 +1,3 @@
-import React from "react";
 import { TaskList } from "./components/TaskList/TaskList";
 import type { Task } from "./types";
 import "./App.css";
@@ -29,11 +28,18 @@ function App() {
       priority: "high",
       dueDate: "2026/03/01",
     },
+    {
+      id: "4",
+      title: "Task 4",
+      description: "Description 4",
+      status: "completed",
+      priority: "medium",
+      dueDate: "2026/04/01",
+    },
   ];
 
   return (
     <div>
-      {/* <Taskfilter onFilterChange={(filters) => console.log(filters)} /> */}
       <TaskList sampleTasks={testTasks} />
     </div>
   );
